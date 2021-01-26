@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.event.*;
 
 public class index {
 
@@ -42,12 +44,27 @@ public class index {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnNewButton = new JButton("Inscription");
-		btnNewButton.setBounds(64, 170, 172, 35);
-		frame.getContentPane().add(btnNewButton);
+		JButton Inscription = new JButton("Inscription");
+		Inscription.setBounds(64, 170, 172, 35);
+		frame.getContentPane().add(Inscription);
+		Inscription.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				frame.dispose();
+				Inscription window = new Inscription();
+				 window.Inscription.setVisible(true);
+			}
+		});
 		
-		JButton btnNewButton_1 = new JButton("Connexion");
-		btnNewButton_1.setBounds(453, 170, 177, 35);
-		frame.getContentPane().add(btnNewButton_1);
+		JButton Connexion = new JButton("Connexion");
+		Connexion.setBounds(453, 170, 177, 35);
+		frame.getContentPane().add(Connexion);
+		Connexion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent ae) {
+				frame.dispose();
+				 page_connexion window = new page_connexion();
+				 window.page_connexion.setVisible(true);
+			}
+		});
+		
 	}
 }
