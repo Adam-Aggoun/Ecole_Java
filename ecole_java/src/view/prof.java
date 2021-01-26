@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class professeur {
+public class prof {
 
 	private JFrame frame;
 
@@ -24,7 +24,7 @@ public class professeur {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					professeur window = new professeur();
+					prof window = new prof();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class professeur {
 	/**
 	 * Create the application.
 	 */
-	public professeur() {
+	public prof() {
 		initialize();
 	}
 
@@ -49,36 +49,26 @@ public class professeur {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Professeur principal");
+		JLabel lblNewLabel = new JLabel("Professeur ");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(283, 25, 205, 51);
+		lblNewLabel.setBounds(303, 25, 205, 51);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Planning\r\n");
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				planning window = new planning();
-				window.planning.setVisible(true);
 				
-			}
-		});
+						frame.dispose();
+						planning window = new planning();
+						window.planning.setVisible(true);
+						
+					}
+				});
+			
+		
 		btnNewButton.setBounds(300, 125, 136, 38);
 		frame.getContentPane().add(btnNewButton);
-		
-		JButton btnRendezvous = new JButton("Rendez-vous\r\n");
-		btnRendezvous.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnRendezvous.setBounds(300, 284, 136, 38);
-		frame.getContentPane().add(btnRendezvous);
-		btnRendezvous.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				planning window = new planning();
-				window.planning.setVisible(true);
-				
-			}
-		});
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -89,7 +79,21 @@ public class professeur {
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"g\u00E9rer classe", "supprimer"}));
 		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		comboBox_1.setBounds(300, 374, 136, 38);
+		comboBox_1.setBounds(300, 296, 136, 38);
 		frame.getContentPane().add(comboBox_1);
+		
+		JButton btnDconnexion = new JButton("d\u00E9connexion");
+		btnDconnexion.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnDconnexion.setBounds(37, 394, 136, 38);
+		frame.getContentPane().add(btnDconnexion);
+		btnDconnexion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+						frame.dispose();
+						page_connexion window = new page_connexion();
+						window.connexion.setVisible(true);
+						
+					}
+				});
 	}
 }
