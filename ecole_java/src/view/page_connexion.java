@@ -42,12 +42,12 @@ public class page_connexion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 364, 296);
+		frame.setBounds(100, 100, 390, 301);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		textField = new JTextField();
-		textField.setBounds(146, 24, 149, 20);
+		textField.setBounds(146, 27, 149, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
