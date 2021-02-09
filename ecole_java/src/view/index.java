@@ -11,6 +11,7 @@ import java.awt.event.*;
 public class index {
 
 	private JFrame frame;
+	protected Object index;
 
 	/**
 	 * Launch the application.
@@ -62,7 +63,7 @@ public class index {
 			public void actionPerformed(ActionEvent ae) {
 				frame.dispose();
 				 page_connexion window = new page_connexion();
-				 window.page_connexion.setVisible(true);
+				 window.connexion.setVisible(true);
 			}
 		});
 		
