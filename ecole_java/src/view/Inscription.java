@@ -1,7 +1,10 @@
 package view;
-
 import java.awt.EventQueue;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
@@ -11,14 +14,17 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
 public class Inscription {
-
+	Statement statement = null;
 	JFrame Inscription;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-
+	
+	
+	
+	
 	/**
 	 * Launch the application.
 	 */
@@ -34,6 +40,8 @@ public class Inscription {
 			}
 		});
 	}
+		
+	
 
 	/**
 	 * Create the application.
@@ -108,5 +116,28 @@ public class Inscription {
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Classe", "STI2D", "CPRP", "SLAM", "SISR"}));
 		comboBox.setBounds(229, 367, 128, 22);
 		Inscription.getContentPane().add(comboBox);
+		{
+            String valeurChamp1 = lblNewLabel_2.getText();
+            lblNewLabel_2.setText(valeurChamp1);
+            String valeurChamp2 = lblNewLabel_1.getText();
+            lblNewLabel_1.setText(valeurChamp2);
+            String valeurChamp3 = lblNewLabel_5.getText();
+            lblNewLabel_5.setText(valeurChamp3);
+            String valeurChamp4 = lblNewLabel_3.getText();
+            lblNewLabel_3.setText(valeurChamp4);
+            String valeurChamp5 = lblNewLabel.getText();
+            lblNewLabel.setText(valeurChamp5);
+       
+		try {
+			
+			
+			Statement stm = cnx.createStatement();
+			ResultSet resultat = statement.executeQuery( "SELECT id, Nom, Prenom, Classe, Mdp, Role, Mail  FROM compte;" );
+			int statut = statement.executeUpdate( "INSERT INTO compte (Nom, Prenom, Classe, Mdp, Mail) VALUES ('"+valeurChamp5+"', '"+valeurChamp2+"', '"+valeurChamp3+"', '"+valeurChamp4+"', '"+valeurChamp1+")'");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+        
 	}
-}
+}}

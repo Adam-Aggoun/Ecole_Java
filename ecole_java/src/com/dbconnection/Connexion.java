@@ -24,7 +24,7 @@ return null;
 public ResultSet Requete(Connection cnx, String requete) {
 try {
 Statement stm = cnx.createStatement();
-ResultSet rs = stm.executeQuery(requete);
+ResultSet rs = stm.executeQuery(requete); 
 return rs;
 }
 catch (SQLException e) {
