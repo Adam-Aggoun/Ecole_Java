@@ -93,7 +93,7 @@ public class page_connexion extends global{
 				try {
 					while(result.next()) {
 						System.out.println("Ca marche!");
-						requete = "Select id from compte where Nom='" + lblNewLabel_1.getText() + "'";
+						requete = "Select id from compte where Mdp='" + lblNewLabel_1.getText() + "'";
 						ResultSet result_id = Connect.Requete(cnx, requete);
 						while(result_id.next()) {
 							id = result_id.getInt(1);
