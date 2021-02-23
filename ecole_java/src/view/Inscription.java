@@ -136,9 +136,12 @@ public class Inscription {
 				Connexion connect = new Connexion();
 				Connection cnx = connect.dbConnection();
 				try {
-					String requete = "INSERT INTO compte (Nom, Prenom, Email, Classe, Mdp) VALUES ('"+Text_Nom.getText()+"', '"+Text_Prenom.getText()+"','"+Text_Email.getText()+"','"+comboBox.getSelectedItem().toString()+", '"+Text_Mpd.getText()+"')'";
+					String requete = "INSERT INTO compte (Nom, Prenom, Email, Classe, Mdp, Rôle) VALUES ('"+Text_Nom.getText()+"', '"+Text_Prenom.getText()+"','"+Text_Email.getText()+"','"+comboBox.getSelectedItem().toString()+"', '"+Text_Mpd.getText()+"', 'Professeur')";
 					connect.Requete_prepare(cnx, requete);
 					System.out.println(requete);
+					Inscription.dispose();
+					page_connexion window = new page_connexion();
+					((Window) window.connexion).setVisible(true);
 				} 
 				catch (Exception ex) {
 					// TODO Auto-generated catch block
