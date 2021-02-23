@@ -45,6 +45,9 @@ public class index {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		
+		
+		
 		JButton Inscription = new JButton("Inscription");
 		Inscription.setBounds(64, 170, 172, 35);
 		frame.getContentPane().add(Inscription);

@@ -18,8 +18,8 @@ import java.sql.ResultSet;
 public class page_connexion extends global{
 
 	JFrame connexion;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField Text_Nom;
+	private JTextField Text_Mdp;
 	
 
 	/**
@@ -54,12 +54,12 @@ public class page_connexion extends global{
 		connexion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		connexion.getContentPane().setLayout(null);
 
-		textField = new JTextField();
-		textField.setBounds(146, 27, 149, 20);
-		connexion.getContentPane().add(textField);
-		textField.setColumns(10);
+		Text_Nom = new JTextField();
+		Text_Nom.setBounds(146, 27, 149, 20);
+		connexion.getContentPane().add(Text_Nom);
+		Text_Nom.setColumns(10);
 
-		JLabel lblNewLabel = new JLabel("Identifiant");
+		JLabel lblNewLabel = new JLabel("Nom");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(10, 23, 96, 21);
 		connexion.getContentPane().add(lblNewLabel);
@@ -69,10 +69,10 @@ public class page_connexion extends global{
 		lblNewLabel_1.setBounds(10, 95, 126, 21);
 		connexion.getContentPane().add(lblNewLabel_1);
 
-		textField_1 = new JTextField();
-		textField_1.setBounds(146, 96, 149, 20);
-		connexion.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		Text_Mdp = new JTextField();
+		Text_Mdp.setBounds(146, 96, 149, 20);
+		connexion.getContentPane().add(Text_Mdp);
+		Text_Mdp.setColumns(10);
 
 
 		JButton btnNewButton = new JButton("Connexion");
@@ -88,12 +88,12 @@ public class page_connexion extends global{
 				Connexion Connect = new Connexion();
 				Connection cnx = Connect.dbConnection();
 				System.out.println(Connect.dbConnection());
-				String requete = "Select * from compte where Nom='" + textField.getText() + "'";
+				String requete = "Select * from compte where Nom='" + Text_Nom.getText() + "'";
 				ResultSet result = Connect.Requete(cnx, requete);
 				try {
 					while(result.next()) {
 						System.out.println("Ca marche!");
-						requete = "Select id from compte where Mdp='" + lblNewLabel_1.getText() + "'";
+						requete = "Select id from compte where Mdp='" + Text_Mdp.getText() + "'";
 						ResultSet result_id = Connect.Requete(cnx, requete);
 						while(result_id.next()) {
 							id = result_id.getInt(1);

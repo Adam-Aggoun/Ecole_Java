@@ -1,10 +1,7 @@
 package view;
-<<<<<<< HEAD
-=======
+
 import com.dbconnection.*;
 import global_variable.*;
-
->>>>>>> branch 'main' of https://github.com/Adam-Aggoun/Ecole_Java.git
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -34,14 +31,14 @@ import javax.swing.DefaultComboBoxModel;
 public class Inscription {
 	Statement statement = null;
 	JFrame Inscription;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	
-	
-	
-	
+	private JTextField Text_Nom;
+	private JTextField Text_Prenom;
+	private JTextField Text_Mpd;
+	private JTextField Text_Email;
+
+
+
+
 	/**
 	 * Launch the application.
 	 */
@@ -57,8 +54,8 @@ public class Inscription {
 			}
 		});
 	}
-		
-	
+
+
 
 	/**
 	 * Create the application.
@@ -72,80 +69,86 @@ public class Inscription {
 	 */
 	private void initialize() {
 		Inscription = new JFrame();
-		Inscription.setBounds(100, 100, 396, 331);
+		Inscription.setBounds(100, 100, 396, 339);
 		Inscription.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Inscription.getContentPane().setLayout(null);
+
+
 		
-		JButton btnNewButton = new JButton("Inscription");
-		btnNewButton.setBounds(98, 239, 168, 23);
-		Inscription.getContentPane().add(btnNewButton);
-		
+
 		JLabel lblNewLabel = new JLabel("Nom");
 		lblNewLabel.setBounds(10, 34, 49, 14);
 		Inscription.getContentPane().add(lblNewLabel);
-		
-		textField = new JTextField();
-		textField.setBounds(229, 31, 128, 20);
-		Inscription.getContentPane().add(textField);
-		textField.setColumns(10);
-		
+
+		Text_Nom = new JTextField();
+		Text_Nom.setBounds(229, 31, 128, 20);
+		Inscription.getContentPane().add(Text_Nom);
+		Text_Nom.setColumns(10);
+
 		JLabel lblNewLabel_1 = new JLabel("Prenom");
 		lblNewLabel_1.setBounds(10, 76, 49, 14);
 		Inscription.getContentPane().add(lblNewLabel_1);
-		
+
 		JLabel lblNewLabel_3 = new JLabel("Mot de passe");
-		lblNewLabel_3.setBounds(10, 112, 139, 14);
+		lblNewLabel_3.setBounds(10, 162, 139, 14);
 		Inscription.getContentPane().add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_4 = new JLabel("Confirmer mot de passe");
-		lblNewLabel_4.setBounds(10, 155, 173, 14);
-		Inscription.getContentPane().add(lblNewLabel_4);
-		
+
 		JLabel lblNewLabel_5 = new JLabel("Classe");
-		lblNewLabel_5.setBounds(10, 198, 49, 14);
+		lblNewLabel_5.setBounds(10, 208, 49, 14);
 		Inscription.getContentPane().add(lblNewLabel_5);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(229, 73, 128, 20);
-		Inscription.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
-		
-		textField_3 = new JTextField();
-		textField_3.setBounds(229, 112, 128, 20);
-		Inscription.getContentPane().add(textField_3);
-		textField_3.setColumns(10);
-		
-		textField_4 = new JTextField();
-		textField_4.setBounds(229, 152, 128, 20);
-		Inscription.getContentPane().add(textField_4);
-		textField_4.setColumns(10);
-		
+
+		Text_Prenom = new JTextField();
+		Text_Prenom.setBounds(229, 73, 128, 20);
+		Inscription.getContentPane().add(Text_Prenom);
+		Text_Prenom.setColumns(10);
+
+		Text_Mpd = new JTextField();
+		Text_Mpd.setBounds(229, 159, 128, 20);
+		Inscription.getContentPane().add(Text_Mpd);
+		Text_Mpd.setColumns(10);
+
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Classe", "STI2D", "CPRP", "SLAM", "SISR"}));
-		comboBox.setBounds(229, 194, 128, 22);
+		comboBox.setBounds(229, 204, 128, 22);
 		Inscription.getContentPane().add(comboBox);
-		{
-            String valeurChamp1 = lblNewLabel_2.getText();
-            lblNewLabel_2.setText(valeurChamp1);
-            String valeurChamp2 = lblNewLabel_1.getText();
-            lblNewLabel_1.setText(valeurChamp2);
-            String valeurChamp3 = lblNewLabel_5.getText();
-            lblNewLabel_5.setText(valeurChamp3);
-            String valeurChamp4 = lblNewLabel_3.getText();
-            lblNewLabel_3.setText(valeurChamp4);
-            String valeurChamp5 = lblNewLabel.getText();
-            lblNewLabel.setText(valeurChamp5);
-       
-		try {
-			
-			
-			Statement stm = cnx.createStatement();
-			ResultSet resultat = statement.executeQuery( "SELECT id, Nom, Prenom, Classe, Mdp, Role, Mail  FROM compte;" );
-			int statut = statement.executeUpdate( "INSERT INTO compte (Nom, Prenom, Classe, Mdp, Mail) VALUES ('"+valeurChamp5+"', '"+valeurChamp2+"', '"+valeurChamp3+"', '"+valeurChamp4+"', '"+valeurChamp1+")'");
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-        
-	}
-}}
+		comboBox.addActionListener(new ActionListener() {     
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+
+
+
+		Text_Email = new JTextField();
+		Text_Email.setBounds(229, 121, 128, 20);
+		Inscription.getContentPane().add(Text_Email);
+		Text_Email.setColumns(10);
+
+		JLabel lblNewLabel_2 = new JLabel("Email");
+		lblNewLabel_2.setBounds(10, 124, 49, 14);
+		Inscription.getContentPane().add(lblNewLabel_2);
+
+		JButton btnNewButton = new JButton("Inscription");
+		btnNewButton.setBounds(105, 249, 168, 23);
+		Inscription.getContentPane().add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+
+				Connexion connect = new Connexion();
+				Connection cnx = connect.dbConnection();
+				try {
+					String requete = "INSERT INTO compte (Nom, Prenom, Email, Mdp, Classe) VALUES ('"+Text_Nom.getText()+"', '"+Text_Prenom.getText()+"','"+Text_Email.getText()+"', '"+Text_Mpd.getText()+"', '"+comboBox.getSelectedItem().toString()+")'";
+					connect.Requete_prepare(cnx, requete);
+					System.out.println(requete);
+				} 
+				catch (Exception ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				} 
+			}
+		});
+
+
+	}	
+}
