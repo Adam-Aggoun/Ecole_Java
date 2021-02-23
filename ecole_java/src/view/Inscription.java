@@ -55,8 +55,6 @@ public class Inscription {
 		});
 	}
 
-
-
 	/**
 	 * Create the application.
 	 */

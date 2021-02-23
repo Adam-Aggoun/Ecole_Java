@@ -75,14 +75,10 @@ public class page_connexion extends global{
 		Text_Mdp.setColumns(10);
 
 
-		JButton btnNewButton = new JButton("Connexion");
-		btnNewButton.setBounds(129, 185, 89, 23);
-		connexion.getContentPane().add(btnNewButton);
-
-
-
 
 		JButton btnConnexion = new JButton("Se connecter");
+		btnConnexion.setBounds(114, 186, 126, 23);
+		connexion.getContentPane().add(btnConnexion);
 		btnConnexion.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Connexion Connect = new Connexion();
