@@ -136,7 +136,7 @@ public class Inscription {
 				Connexion connect = new Connexion();
 				Connection cnx = connect.dbConnection();
 				try {
-					String requete = "INSERT INTO compte (Nom, Prenom, Email, Mdp, Classe) VALUES ('"+Text_Nom.getText()+"', '"+Text_Prenom.getText()+"','"+Text_Email.getText()+"', '"+Text_Mpd.getText()+"', '"+comboBox.getSelectedItem().toString()+")'";
+					String requete = "INSERT INTO compte (Nom, Prenom, Email, Classe, Mdp) VALUES ('"+Text_Nom.getText()+"', '"+Text_Prenom.getText()+"','"+Text_Email.getText()+"','"+comboBox.getSelectedItem().toString()+", '"+Text_Mpd.getText()+"')'";
 					connect.Requete_prepare(cnx, requete);
 					System.out.println(requete);
 				} 

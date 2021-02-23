@@ -14,12 +14,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import javax.swing.JPasswordField;
 
 public class page_connexion extends global{
 
 	JFrame connexion;
 	private JTextField Text_Nom;
-	private JTextField Text_Mdp;
+	private JPasswordField Text_Mdp;
 	
 
 	/**
@@ -69,16 +70,15 @@ public class page_connexion extends global{
 		lblNewLabel_1.setBounds(10, 95, 126, 21);
 		connexion.getContentPane().add(lblNewLabel_1);
 
-		Text_Mdp = new JTextField();
-		Text_Mdp.setBounds(146, 96, 149, 20);
-		connexion.getContentPane().add(Text_Mdp);
-		Text_Mdp.setColumns(10);
-
 
 
 		JButton btnConnexion = new JButton("Se connecter");
 		btnConnexion.setBounds(114, 186, 126, 23);
 		connexion.getContentPane().add(btnConnexion);
+		
+		Text_Mdp = new JPasswordField();
+		Text_Mdp.setBounds(146, 99, 149, 20);
+		connexion.getContentPane().add(Text_Mdp);
 		btnConnexion.addActionListener((ActionListener) new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Connexion Connect = new Connexion();
@@ -95,8 +95,8 @@ public class page_connexion extends global{
 							id = result_id.getInt(1);
 							result_id.close();
 							connexion.dispose();
-							index window = new index();
-							((Window) window.index).setVisible(true);
+							professeur window = new professeur();
+							((Window) window.frame).setVisible(true);
 							result.close();
 						}
 					}

@@ -10,7 +10,7 @@ import java.awt.event.*;
 
 public class index {
 
-	private JFrame frame;
+	 JFrame frame1;
 	protected Object index;
 
 	/**
@@ -21,7 +21,7 @@ public class index {
 			public void run() {
 				try {
 					index window = new index();
-					window.frame.setVisible(true);
+					window.frame1.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,20 +40,20 @@ public class index {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 726, 364);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		frame1 = new JFrame();
+		frame1.setBounds(100, 100, 726, 364);
+		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame1.getContentPane().setLayout(null);
 		
 		
 		
 		
 		JButton Inscription = new JButton("Inscription");
 		Inscription.setBounds(64, 170, 172, 35);
-		frame.getContentPane().add(Inscription);
+		frame1.getContentPane().add(Inscription);
 		Inscription.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-				frame.dispose();
+				frame1.dispose();
 				Inscription window = new Inscription();
 				 window.Inscription.setVisible(true);
 			}
@@ -61,10 +61,10 @@ public class index {
 		
 		JButton Connexion = new JButton("Connexion");
 		Connexion.setBounds(453, 170, 177, 35);
-		frame.getContentPane().add(Connexion);
+		frame1.getContentPane().add(Connexion);
 		Connexion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent ae) {
-				frame.dispose();
+				frame1.dispose();
 				 page_connexion window = new page_connexion();
 				 window.connexion.setVisible(true);
 			}
