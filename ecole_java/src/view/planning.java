@@ -23,6 +23,7 @@ public class planning {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTextField textField_7;
+	private JTextField textField_8;
 
 	/**
 	 * Launch the application.
@@ -150,6 +151,11 @@ public class planning {
 		btnRetour.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnRetour.setBounds(10, 456, 156, 42);
 		planning.getContentPane().add(btnRetour);
+		
+		textField_8 = new JTextField();
+		textField_8.setBounds(94, 104, 111, 26);
+		planning.getContentPane().add(textField_8);
+		textField_8.setColumns(10);
 		btnRetour.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {

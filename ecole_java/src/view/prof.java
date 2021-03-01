@@ -76,22 +76,20 @@ public class prof {
 		comboBox.setBounds(300, 210, 136, 38);
 		frame.getContentPane().add(comboBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"g\u00E9rer classe", "supprimer"}));
-		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		comboBox_1.setBounds(300, 296, 136, 38);
-		frame.getContentPane().add(comboBox_1);
-		
 		JButton btnDconnexion = new JButton("d\u00E9connexion");
 		btnDconnexion.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnDconnexion.setBounds(37, 394, 136, 38);
 		frame.getContentPane().add(btnDconnexion);
+		
+		JButton btnNewButton_1 = new JButton("G\u00E9rer classe");
+		btnNewButton_1.setBounds(303, 277, 133, 38);
+		frame.getContentPane().add(btnNewButton_1);
 		btnDconnexion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-						frame.dispose();
-						page_connexion window = new page_connexion();
-						window.connexion.setVisible(true);
+				frame.dispose();
+				gestion window = new gestion();
+				window.frame.setVisible(true);
 						
 					}
 				});
