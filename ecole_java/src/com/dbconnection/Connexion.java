@@ -42,4 +42,12 @@ public class Connexion {
 		}
 		return null;
 		}
+	
+//	public HashMap<String, List<String>> affichageClasse(){
+//		
+//		
+//		try {
+//			Connection cnx = 
+//		}
+//	}
 }
