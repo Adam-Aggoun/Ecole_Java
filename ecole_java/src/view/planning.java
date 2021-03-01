@@ -10,9 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JTextField;
+
+import global_variable.global;
+
 import javax.swing.JButton;
 
-public class planning {
+public class planning extends global {
 
 	JFrame planning;
 	private JTextField textField;
@@ -56,7 +59,7 @@ public class planning {
 		planning.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		planning.getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Planning");
+		JLabel lblNewLabel = new JLabel("Planning de "+nom_prof);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(336, 30, 199, 50);
 		planning.getContentPane().add(lblNewLabel);

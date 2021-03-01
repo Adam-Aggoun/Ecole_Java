@@ -84,15 +84,17 @@ public class page_connexion extends global{
 				Connexion Connect = new Connexion();
 				Connection cnx = Connect.dbConnection();
 				System.out.println(Connect.dbConnection());
-				String requete = "Select * from compte where Nom='" + Text_Nom.getText() + "'";
+				String requete = "Select * from compte where Nom='" + Text_Nom.getText() + "'and Mdp ='"+ Text_Mdp.getText()+"'";
 				ResultSet result = Connect.Requete(cnx, requete);
 				try {
 					while(result.next()) {
+						
 						System.out.println("Ca marche!");
-						requete = "Select id from compte where Mdp='" + Text_Mdp.getText() + "'";
+						requete = "Select id from compte where Nom='" + Text_Nom.getText() + "'";
 						ResultSet result_id = Connect.Requete(cnx, requete);
 						while(result_id.next()) {
 							id = result_id.getInt(1);
+							nom_prof = Text_Nom.getText();
 							result_id.close();
 							connexion.dispose();
 							professeur window = new professeur();
