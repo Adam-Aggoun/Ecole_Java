@@ -64,12 +64,12 @@ public class professeur {
 				
 			}
 		});
-		btnNewButton.setBounds(300, 194, 136, 38);
+		btnNewButton.setBounds(300, 114, 136, 38);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnRendezvous = new JButton("Rendez-vous\r\n");
 		btnRendezvous.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnRendezvous.setBounds(300, 284, 136, 38);
+		btnRendezvous.setBounds(300, 216, 136, 38);
 		frame.getContentPane().add(btnRendezvous);
 		btnRendezvous.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -79,5 +79,19 @@ public class professeur {
 				
 			}
 		});
+		
+		JButton btnGestion = new JButton("Gestion des classes");
+		btnGestion.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnGestion.setBounds(285, 315, 169, 38);
+		frame.getContentPane().add(btnGestion);
+		btnGestion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				gestion  window = new gestion ();
+				window.frame.setVisible(true);
+				
+			}
+		});
+		
 	}
 }
