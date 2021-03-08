@@ -82,7 +82,7 @@ public class prof {
 		frame.getContentPane().add(btnDconnexion);
 		
 		JButton btnNewButton_1 = new JButton("G\u00E9rer classe");
-		btnNewButton_1.setBounds(303, 277, 133, 38);
+		btnNewButton_1.setBounds(300, 288, 136, 38);
 		frame.getContentPane().add(btnNewButton_1);
 		btnDconnexion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
