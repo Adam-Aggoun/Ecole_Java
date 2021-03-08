@@ -64,7 +64,7 @@ public class professeur {
 				
 			}
 		});
-		btnNewButton.setBounds(300, 125, 136, 38);
+		btnNewButton.setBounds(300, 194, 136, 38);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnRendezvous = new JButton("Rendez-vous\r\n");
@@ -74,22 +74,10 @@ public class professeur {
 		btnRendezvous.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				planning window = new planning();
-				window.planning.setVisible(true);
+				rdv window = new rdv();
+				window.frame.setVisible(true);
 				
 			}
 		});
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Vue des classes", "STI2D", "SISR", "CPRP", "SLAM"}));
-		comboBox.setBounds(300, 210, 136, 38);
-		frame.getContentPane().add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"g\u00E9rer classe", "supprimer"}));
-		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		comboBox_1.setBounds(300, 374, 136, 38);
-		frame.getContentPane().add(comboBox_1);
 	}
 }
