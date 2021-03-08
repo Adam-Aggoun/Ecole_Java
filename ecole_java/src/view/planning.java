@@ -23,8 +23,7 @@ import javax.swing.JTextArea;
 public class planning extends global {
 
 	JFrame planning;
-<<<<<<< HEAD
-=======
+
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -34,7 +33,7 @@ public class planning extends global {
 	private JTextField textField_6;
 	private JTextField textField_7;
 	private JTextField textField_8;
->>>>>>> branch 'main' of https://github.com/Adam-Aggoun/Ecole_Java.git
+
 
 	/**
 	 * Launch the application.
@@ -87,8 +86,7 @@ public class planning extends global {
 		btnRetour.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnRetour.setBounds(10, 456, 156, 42);
 		planning.getContentPane().add(btnRetour);
-		
-<<<<<<< HEAD
+
 		JTextArea Classe1 = new JTextArea();
 		Classe1.setEditable(false);
 		Classe1.setBounds(121, 182, 84, 22);
@@ -163,10 +161,13 @@ public class planning extends global {
 		Heure4.setEditable(false);
 		Heure4.setBounds(451, 363, 108, 22);
 		planning.getContentPane().add(Heure4);
+
 		textField_8 = new JTextField();
+		textField_8.setEditable(false);
 		textField_8.setBounds(94, 104, 111, 26);
 		planning.getContentPane().add(textField_8);
 		textField_8.setColumns(10);
+
 		btnRetour.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {

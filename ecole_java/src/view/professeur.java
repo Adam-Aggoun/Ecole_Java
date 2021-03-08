@@ -74,8 +74,8 @@ public class professeur {
 		btnRendezvous.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				planning window = new planning();
-				window.planning.setVisible(true);
+				rdv window = new rdv();
+				window.frame.setVisible(true);
 				
 			}
 		});
