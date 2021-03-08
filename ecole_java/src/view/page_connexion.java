@@ -96,11 +96,17 @@ public class page_connexion extends global{
 							id = result_id.getInt(1);
 							nom_prof = Text_Nom.getText();
 							result_id.close();
+							if (result.getString(7).equals("admin")){
+								connexion.dispose();
+								Admin window = new Admin();
+								window.frame.setVisible(true);
+							 }else {
+							 
 							connexion.dispose();
 							professeur window = new professeur();
 							((Window) window.frame).setVisible(true);
 							result.close();
-						}
+							}}
 					}
 					System.out.println("Ca marche pas...");
 				}
