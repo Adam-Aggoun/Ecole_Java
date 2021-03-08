@@ -22,7 +22,7 @@ import javax.swing.JTextArea;
 
 public class rdv extends global {
 
-	JFrame frame;
+	 JFrame frame;
 
 	/**
 	 * Launch the application.
