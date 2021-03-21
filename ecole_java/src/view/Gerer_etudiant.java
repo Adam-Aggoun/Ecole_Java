@@ -7,8 +7,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.JTextField;
+
+import com.dbconnection.Connexion;
+
 import javax.swing.JButton;
 
 public class Gerer_etudiant {
@@ -16,8 +20,6 @@ public class Gerer_etudiant {
 	 JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
 	private JTextField textField_4;
 
 	/**
@@ -67,16 +69,6 @@ public class Gerer_etudiant {
 		textField_1.setBounds(81, 145, 137, 38);
 		frame.getContentPane().add(textField_1);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(81, 198, 137, 38);
-		frame.getContentPane().add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(383, 145, 137, 38);
-		frame.getContentPane().add(textField_3);
-		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(383, 97, 137, 38);
@@ -87,9 +79,20 @@ public class Gerer_etudiant {
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				Admin window = new Admin();
-				window.frame.setVisible(true);
+				Connexion connect = new Connexion();
+				Connection cnx = connect.dbConnection();
+				try {
+					String requete = "update eleve set nom='"+textField.getText()+"',Prenom='"+textField_1.getText()+"', Classe='"+textField_4.getText()+"' where nom='"+textField.getText()+"' ";
+					connect.Requete_prepare(cnx, requete);
+					System.out.println(requete);
+					frame.dispose();
+					Admin window = new Admin();
+					window.frame.setVisible(true);
+				} 
+				catch (Exception ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				} 
 				
 			}
 		});
@@ -102,17 +105,9 @@ public class Gerer_etudiant {
 		lblNewLabel_1_1.setBounds(10, 145, 61, 26);
 		frame.getContentPane().add(lblNewLabel_1_1);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("Age");
-		lblNewLabel_1_2.setBounds(10, 198, 61, 26);
-		frame.getContentPane().add(lblNewLabel_1_2);
-		
 		JLabel lblNewLabel_1_3 = new JLabel("Classe");
 		lblNewLabel_1_3.setBounds(312, 109, 61, 26);
 		frame.getContentPane().add(lblNewLabel_1_3);
-		
-		JLabel lblNewLabel_1_4 = new JLabel("Adresse");
-		lblNewLabel_1_4.setBounds(312, 157, 61, 26);
-		frame.getContentPane().add(lblNewLabel_1_4);
 	}
 
 }

@@ -15,7 +15,7 @@ import javax.swing.DefaultComboBoxModel;
 
 public class prof {
 
-	private JFrame frame;
+	 JFrame frame;
 
 	/**
 	 * Launch the application.

@@ -7,8 +7,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.JTextField;
+
+import com.dbconnection.Connexion;
+
 import javax.swing.JButton;
 
 public class Etudiant {
@@ -55,20 +59,6 @@ public class Etudiant {
 		lblNewLabel.setBounds(298, 11, 191, 39);
 		frame.getContentPane().add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setBounds(264, 90, 215, 39);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(264, 140, 215, 39);
-		frame.getContentPane().add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(264, 200, 215, 39);
-		frame.getContentPane().add(textField_2);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -85,17 +75,47 @@ public class Etudiant {
 		lblNewLabel_1_2.setBounds(148, 200, 95, 39);
 		frame.getContentPane().add(lblNewLabel_1_2);
 		
+		textField = new JTextField();
+		textField.setBounds(264, 90, 215, 39);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(264, 140, 215, 39);
+		frame.getContentPane().add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(264, 200, 215, 39);
+		frame.getContentPane().add(textField_2);
+		
 		JButton btnNewButton = new JButton("Valider\r\n");
 		btnNewButton.setBounds(315, 303, 107, 39);
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				Admin window = new Admin();
-				window.frame.setVisible(true);
+				
+				Connexion connect = new Connexion();
+				Connection cnx = connect.dbConnection();
+				try {
+					String requete = "INSERT INTO eleve (Nom, Prenom, Classe) VALUES ('"+textField.getText()+"', '"+textField_1.getText()+"','"+textField_2.getText()+"')";
+					connect.Requete_prepare(cnx, requete);
+					System.out.println(requete);
+					frame.dispose();
+					Admin window = new Admin();
+					window.frame.setVisible(true);
+				} 
+				catch (Exception ex) {
+					// TODO Auto-generated catch block
+					ex.printStackTrace();
+				} 
+			
+			}
+	});
 				
 			}
-		});
+		
 	}
 
-}
+

@@ -5,10 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 import javax.swing.JTextField;
+
+import com.dbconnection.Connexion;
+
 import javax.swing.JButton;
 
 public class Classe {
@@ -69,11 +74,23 @@ public class Classe {
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				Admin window = new Admin();
-				window.frame.setVisible(true);
 				
-			}
+					Connexion connect = new Connexion();
+					Connection cnx = connect.dbConnection();
+					try {
+						String requete = "INSERT INTO classe (Nom, Effectif) VALUES ('"+textField.getText()+"', '"+textField_1.getText()+"')";
+						connect.Requete_prepare(cnx, requete);
+						System.out.println(requete);
+						frame.dispose();
+						Admin window = new Admin();
+						window.frame.setVisible(true);
+					} 
+					catch (Exception ex) {
+						// TODO Auto-generated catch block
+						ex.printStackTrace();
+					} 
+				
+				}
 		});
 		
 		JLabel lblNewLabel_1 = new JLabel("Nom Classe\r\n");
