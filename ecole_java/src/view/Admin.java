@@ -52,7 +52,7 @@ public class Admin {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Ajouter Classe\r\n");
-		btnNewButton.setBounds(244, 117, 137, 42);
+		btnNewButton.setBounds(244, 108, 137, 42);
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -64,7 +64,7 @@ public class Admin {
 		});
 		
 		JButton btnAjouterEtudiant = new JButton("Ajouter Etudiant");
-		btnAjouterEtudiant.setBounds(244, 195, 137, 42);
+		btnAjouterEtudiant.setBounds(244, 171, 137, 51);
 		frame.getContentPane().add(btnAjouterEtudiant);
 		btnAjouterEtudiant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -76,7 +76,7 @@ public class Admin {
 		});
 		
 		JButton btnGererEtudiant = new JButton("Gerer Etudiant");
-		btnGererEtudiant.setBounds(244, 277, 137, 42);
+		btnGererEtudiant.setBounds(244, 252, 137, 42);
 		frame.getContentPane().add(btnGererEtudiant);
 		btnGererEtudiant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,6 +92,16 @@ public class Admin {
 		JButton btnNewButton_1 = new JButton("Deconnexion");
 		btnNewButton_1.setBounds(530, 366, 124, 42);
 		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Ajouter prof\r\n");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnNewButton_2.setBounds(398, 171, 161, 51);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JButton btnNewButton_2_1 = new JButton("Ajouter professeur principal\r\n");
+		btnNewButton_2_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnNewButton_2_1.setBounds(58, 171, 169, 51);
+		frame.getContentPane().add(btnNewButton_2_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
