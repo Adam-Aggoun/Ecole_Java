@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 import com.dbconnection.Connexion;
 
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class Etudiant {
 
@@ -50,6 +51,7 @@ public class Etudiant {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(60, 179, 113));
 		frame.setBounds(100, 100, 750, 476);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -113,6 +115,17 @@ public class Etudiant {
 			
 			}
 	});
+		JButton btnNewButton_1 = new JButton("Retour\r\n");
+		btnNewButton_1.setBounds(499, 303, 95, 39);
+		frame.getContentPane().add(btnNewButton_1);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Admin window = new Admin();
+				window.frame.setVisible(true);
+				frame.dispose();
+
+			}
+		});
 				
 			}
 		

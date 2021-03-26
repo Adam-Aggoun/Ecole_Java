@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class Admin {
 
@@ -42,6 +43,7 @@ public class Admin {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(60, 179, 113));
 		frame.setBounds(100, 100, 691, 482);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -52,7 +54,7 @@ public class Admin {
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("Ajouter Classe\r\n");
-		btnNewButton.setBounds(244, 108, 137, 42);
+		btnNewButton.setBounds(244, 117, 137, 42);
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -64,7 +66,7 @@ public class Admin {
 		});
 		
 		JButton btnAjouterEtudiant = new JButton("Ajouter Etudiant");
-		btnAjouterEtudiant.setBounds(244, 171, 137, 51);
+		btnAjouterEtudiant.setBounds(244, 195, 137, 42);
 		frame.getContentPane().add(btnAjouterEtudiant);
 		btnAjouterEtudiant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -76,7 +78,7 @@ public class Admin {
 		});
 		
 		JButton btnGererEtudiant = new JButton("Gerer Etudiant");
-		btnGererEtudiant.setBounds(244, 252, 137, 42);
+		btnGererEtudiant.setBounds(244, 277, 137, 42);
 		frame.getContentPane().add(btnGererEtudiant);
 		btnGererEtudiant.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,21 +94,23 @@ public class Admin {
 		JButton btnNewButton_1 = new JButton("Deconnexion");
 		btnNewButton_1.setBounds(530, 366, 124, 42);
 		frame.getContentPane().add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("Ajouter prof\r\n");
-		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton_2.setBounds(398, 171, 161, 51);
-		frame.getContentPane().add(btnNewButton_2);
-		
-		JButton btnNewButton_2_1 = new JButton("Ajouter professeur principal\r\n");
-		btnNewButton_2_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnNewButton_2_1.setBounds(58, 171, 169, 51);
-		frame.getContentPane().add(btnNewButton_2_1);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				page_connexion window = new page_connexion();
+				page_connexion  window = new page_connexion ();
 				window.connexion.setVisible(true);
+				
+			}
+		});
+		
+		JButton btnAjouterCompte = new JButton("Ajouter Compte\r\n");
+		btnAjouterCompte.setBounds(448, 117, 137, 42);
+		frame.getContentPane().add(btnAjouterCompte);
+		btnAjouterCompte.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				Ajout_compte window = new Ajout_compte();
+				window.frame.setVisible(true);
 				
 			}
 		});

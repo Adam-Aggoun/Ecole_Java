@@ -19,6 +19,7 @@ import global_variable.global;
 
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.Color;
 
 public class planning extends global {
 
@@ -63,6 +64,7 @@ public class planning extends global {
 	 */
 	private void initialize() {
 		planning = new JFrame();
+		planning.getContentPane().setBackground(new Color(60, 179, 113));
 		planning.setBounds(100, 100, 872, 546);
 		planning.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		planning.getContentPane().setLayout(null);

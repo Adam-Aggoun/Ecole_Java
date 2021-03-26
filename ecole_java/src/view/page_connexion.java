@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import javax.swing.JPasswordField;
+import java.awt.Color;
 
 public class page_connexion extends global{
 
@@ -51,6 +52,7 @@ public class page_connexion extends global{
 	 */
 	private void initialize() {
 		connexion = new JFrame();
+		connexion.getContentPane().setBackground(new Color(60, 179, 113));
 		connexion.setBounds(100, 100, 390, 301);
 		connexion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		connexion.getContentPane().setLayout(null);

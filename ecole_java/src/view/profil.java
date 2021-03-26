@@ -16,12 +16,13 @@ import com.dbconnection.Connexion;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class Gerer_etudiant {
+public class profil {
 
 	 JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
-	private JTextField textField_4;
+	private JTextField textField_2;
+	private JTextField textField_3;
 
 	/**
 	 * Launch the application.
@@ -30,7 +31,7 @@ public class Gerer_etudiant {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Gerer_etudiant window = new Gerer_etudiant();
+					profil window = new profil();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +43,7 @@ public class Gerer_etudiant {
 	/**
 	 * Create the application.
 	 */
-	public Gerer_etudiant() {
+	public profil() {
 		initialize();
 	}
 
@@ -52,43 +53,64 @@ public class Gerer_etudiant {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(60, 179, 113));
-		frame.setBounds(100, 100, 689, 461);
+		frame.setBounds(100, 100, 551, 386);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Gestion Etudiant");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(264, 30, 161, 49);
+		JLabel lblNewLabel = new JLabel("Modification Profil");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		lblNewLabel.setBounds(191, 11, 145, 55);
 		frame.getContentPane().add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(81, 97, 137, 38);
+		textField.setBounds(175, 66, 161, 29);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(81, 145, 137, 38);
+		textField_1.setBounds(175, 106, 161, 29);
 		frame.getContentPane().add(textField_1);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(383, 97, 137, 38);
-		frame.getContentPane().add(textField_4);
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(175, 146, 161, 29);
+		frame.getContentPane().add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(175, 186, 161, 29);
+		frame.getContentPane().add(textField_3);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nom");
+		lblNewLabel_1.setBounds(39, 66, 69, 21);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Prenom");
+		lblNewLabel_1_1.setBounds(39, 113, 69, 21);
+		frame.getContentPane().add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Email");
+		lblNewLabel_1_2.setBounds(39, 153, 69, 21);
+		frame.getContentPane().add(lblNewLabel_1_2);
+		
+		JLabel lblNewLabel_1_3 = new JLabel("Mdp");
+		lblNewLabel_1_3.setBounds(39, 193, 69, 21);
+		frame.getContentPane().add(lblNewLabel_1_3);
 		
 		JButton btnNewButton = new JButton("Valider");
-		btnNewButton.setBounds(288, 298, 137, 31);
+		btnNewButton.setBounds(191, 254, 108, 36);
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Connexion connect = new Connexion();
 				Connection cnx = connect.dbConnection();
 				try {
-					String requete = "update eleve set nom='"+textField.getText()+"',Prenom='"+textField_1.getText()+"', Classe='"+textField_4.getText()+"' where nom='"+textField.getText()+"' ";
+					String requete = "update compte set nom='"+textField.getText()+"',Prenom='"+textField_1.getText()+"',Email='"+textField_2.getText()+"', Mdp='"+textField_3.getText()+"' where nom='"+textField.getText()+"' ";
 					connect.Requete_prepare(cnx, requete);
 					System.out.println(requete);
 					frame.dispose();
-					Admin window = new Admin();
+					professeur window = new professeur();
 					window.frame.setVisible(true);
 				} 
 				catch (Exception ex) {
@@ -99,29 +121,18 @@ public class Gerer_etudiant {
 			}
 		});
 		
-		JLabel lblNewLabel_1 = new JLabel("Nom");
-		lblNewLabel_1.setBounds(10, 103, 61, 26);
-		frame.getContentPane().add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("Prenom");
-		lblNewLabel_1_1.setBounds(10, 145, 61, 26);
-		frame.getContentPane().add(lblNewLabel_1_1);
-		
-		JLabel lblNewLabel_1_3 = new JLabel("Classe");
-		lblNewLabel_1_3.setBounds(312, 109, 61, 26);
-		frame.getContentPane().add(lblNewLabel_1_3);
-		
 		JButton btnRetour = new JButton("Retour");
-		btnRetour.setBounds(516, 298, 116, 42);
+		btnRetour.setBounds(368, 254, 108, 36);
 		frame.getContentPane().add(btnRetour);
 		btnRetour.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			Admin window = new Admin();
-			window.frame.setVisible(true);
-			frame.dispose();
 
-		}
-	});
+			public void actionPerformed(ActionEvent e) {
+				professeur window = new professeur();
+				window.frame.setVisible(true);
+				frame.dispose();
+
+			}
+		});
 	}
 
 }

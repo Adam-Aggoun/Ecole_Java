@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import com.dbconnection.Connexion;
 
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class Classe {
 
@@ -50,6 +51,7 @@ public class Classe {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(60, 179, 113));
 		frame.setBounds(100, 100, 828, 511);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -102,5 +104,18 @@ public class Classe {
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		lblNewLabel_1_1.setBounds(151, 217, 95, 31);
 		frame.getContentPane().add(lblNewLabel_1_1);
+		
+		JButton btnRetour = new JButton("Retour");
+		btnRetour.setBounds(642, 319, 116, 42);
+		frame.getContentPane().add(btnRetour);
+		btnRetour.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				Admin window = new Admin();
+				window.frame.setVisible(true);
+				frame.dispose();
+
+			}
+		});
 	}
 }

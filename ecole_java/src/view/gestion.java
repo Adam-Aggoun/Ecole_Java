@@ -68,6 +68,7 @@ public class gestion {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(60, 179, 113));
 		frame.setBounds(100, 100, 715, 655);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

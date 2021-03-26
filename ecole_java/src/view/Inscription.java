@@ -27,6 +27,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
 
 public class Inscription {
 	Statement statement = null;
@@ -67,6 +68,7 @@ public class Inscription {
 	 */
 	private void initialize() {
 		Inscription = new JFrame();
+		Inscription.getContentPane().setBackground(new Color(60, 179, 113));
 		Inscription.setBounds(100, 100, 396, 339);
 		Inscription.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Inscription.getContentPane().setLayout(null);

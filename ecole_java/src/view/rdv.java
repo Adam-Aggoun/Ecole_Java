@@ -19,6 +19,7 @@ import global_variable.global;
 
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import java.awt.Color;
 
 public class rdv extends global {
 
@@ -52,6 +53,7 @@ public class rdv extends global {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(60, 179, 113));
 		frame.setBounds(100, 100, 780, 508);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
